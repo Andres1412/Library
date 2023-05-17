@@ -1,0 +1,66 @@
+.falseBodyBook {
+    background-image: url("/assets/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 98vh; 
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+  }
+
+  .fixedBtn{
+    position: sticky;
+    bottom: 0;
+    padding: 10px;
+  }
+
+  .title-booking{
+    font-weight: 1000;
+    font-size: 20px;
+  }
+  .title-booking-div{
+    font-size: 17px;
+    font-family: var(--font-family-lobster);
+    font-weight: bold;
+  }
+  .materialsList{
+    padding-left: 0rem!important;
+  }
+  
+  .scroll{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 280px;
+  }
+  
+  .pi-DancingSmall{
+    font-size:var(--font-size-Cards-titular);
+    font-weight: 900;
+  }
+
+  .pi-card-header{
+    font-family: var(--font-family-serif);
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 6px 8px;
+    background-color: var(--main-color-lightBlue);
+    border-radius: 10px;
+    color:var(--main-color-white);
+    margin-bottom: 15px;
+  }
+
+  .ver{
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
+
+  .date-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .date-select{
+    width: 65px;
+    height: 35px;
+    border: 2px solid black;
+  }
+  

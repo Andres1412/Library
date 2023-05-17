@@ -1,0 +1,99 @@
+<div class="falseBodyDash">
+  <div class="container">
+    <div class="row pi-containerDashboard d-flex">
+      <div>
+        <h1 class="titulos">DASHBOARD</h1>
+      </div>
+      <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem; margin-top: -30px; height: 85vh;">
+        <div class="card pi-card" style="height:100%">
+          <div class="pi-card-header text-center">Reserva de libros</div>
+          <div class="mx-1">
+            <h3 class="pi-cardTitleLobster">¿Te apetece leer un libro?</h3>
+            <p class="pi-light" style="text-align: justify;">La lectura favorece el desarrollo del pensamiento crítico y la imaginación, estimulando la creatividad y fomentando la empatía. Además, mejora las habilidades lingüísticas, la comprensión lectora y potencia la capacidad de comunicación efectiva.</p>
+          </div>
+          <!-- <div class="pi-cardImg">
+            <img class="pi-img pi-mainImg img-fluid" src="assets/library.jpeg" alt="">
+          </div> -->
+          <div class="d-flex align-items-end" style="height:100%">
+            <a class="btn pi-buttonCard" [routerLink]="'/bookingBooks'">Comenzar la reserva</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem; margin-top: -30px;">
+        <div class="row d-flex" style="padding-bottom: 20px; flex-grow:1;">
+          <div class="col-md-12">
+            <div class="card pi-card pi-bannerCard" style="height:310px">
+              <div class="pi-card-header text-center">Mis salas reservadas</div>
+              <ul class="d-flex flex-column justify-content-between materialsList scroll">
+                <div *ngFor="let reservaSala of arrayReservaSalas;" class="justify-content-between">
+                  <div class="d-flex justify-content-between">
+                    <div><p style="color: green;">Sala</p>{{ reservaSala.numeroSala }}</div>
+                    <div><p style="color: red;">Fecha reservada</p>{{ reservaSala.fechaReservaSala}}</div>
+                    <div><p style="color: red;">Hora reservada</p>{{ reservaSala.horario}}</div>
+                  </div>
+                  <hr class="pi-hrOnCard">
+              </div> 
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex align-items-stretch" style="flex-grow:1;">
+          <div class="col-md-12">
+            <div class="card pi-card pi-bannerCard" style="height:310px">
+              <div class="pi-card-header text-center">Mis libros reservados</div>
+              <ul class="d-flex flex-column justify-content-between materialsList scroll">
+              <div *ngFor="let reserva of arrayReservas;" class="justify-content-between">
+                <div class="d-flex justify-content-between">
+                  <div><p style="color: green;">Nombre</p>{{ reserva.libroNombre }}</div>
+                  <div><p style="color: red;">Fecha devolución</p>{{ reserva.fechaDevolucion }}</div>
+                </div>
+                <hr class="pi-hrOnCard">
+            </div> 
+          </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem; margin-top: -30px; height: 85vh;">
+        <div class="card pi-card" style="flex-grow:1;">
+          <div class="pi-card-header text-center">Reserva de salas</div>
+          <div class="mx-1">
+            <h3 class="pi-cardTitleLobster">¿Te apetece venir a leer?</h3>
+            <p class="pi-light" style="text-align: justify;">Reserva una sala para estar tranquilo solo o acompañado y leer los libros que más te
+              gusten</p>
+          </div>
+          <div class="d-flex align-items-end" style="height:100%">
+            <a href="#" class="btn pi-buttonCard" [routerLink]="'/bookingRooms'">Comenzar la reserva</a>
+          </div>
+        </div>
+        <div class="card pi-card" style="flex-grow:1; height: 295px;">
+          <div class="calendar-header">
+            <button (click)="prevMonth()"><i class="bi bi-arrow-left"></i></button>
+            <h2>{{ monthName }} {{ year }}</h2>
+            <button (click)="nextMonth()"><i class="bi bi-arrow-right"></i></button>
+          </div>          
+            <table>
+              <thead>
+                <tr>
+                  <th>Sun</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let week of weeks">
+                  <td *ngFor="let day of week" [ngClass]="{ 'other-month': day.otherMonth }">
+                    {{ day.number }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

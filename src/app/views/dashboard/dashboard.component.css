@@ -1,0 +1,150 @@
+.pi-mainImg{
+    width: 100%;
+    mix-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    width: 28vh;
+  }
+  
+  .pi-cardImg{
+    display: flex;
+    justify-content: center;
+  }
+
+  .falseBodyDash {
+    background-image: url("/assets/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 98vh; 
+    overflow: hidden;
+    
+  }
+
+  .pi-cardTitleLobster{
+    font-family: var(--font-family-lobster);
+    font-size: var(--font-size-CardsMain-titular);
+    font-weight: 700;
+  }
+  .pi-cardTitleSans{
+    font-weight: 700;
+    font-family:var(--font-family-lobster);
+    font-size: var(--font-size-Cards-titular);
+  }
+  .pi-light{
+    font-family: var(--font-family-dancing);
+    color: var(--font-color-lightOnCard);
+    font-size: 30px;
+  }
+  
+  
+  .pi-txt-smaller{
+    font-size: var(--font-size-Cards-texto);
+    margin-bottom: 5px;
+  }
+  .pi-list{
+    font-size: 12px;
+    list-style-type: none;
+  }
+  
+  .pi-card-header{
+    font-family: var(--font-family-serif);
+    font-size: 30px;
+    font-weight: 500;
+    padding: 6px 6px 8px;
+    background-color: var(--main-color-lightBlue);
+    border-radius: 10px;
+    color:var(--main-color-white);
+    margin-bottom: 15px;
+  }
+  .pi-cardList{
+    padding: 0px;
+    margin-top:-10px;
+  }
+  
+  .pi-numbers-calendar{
+    font-weight: 800;
+  }
+  .pi-smallBtn{
+    padding:3px;
+    width: 80%;
+  }
+  .pi-header-calendar{
+    font-family: var(--font-family-dancing);
+    font-weight: 400;
+    font-size: 11px;
+  }
+  .pi-modal-paragraph-header{
+    width: 60%;
+  }
+  .pi-modal-content{
+    width:40vw;
+    min-width: 250px;
+    max-width: 400px;
+  }
+  .pi-modalBooking-heads{
+    font-family: var(--font-family-lobster);
+    font-weight: 700;
+    font-size: 15px;
+    padding-top:0px!important;
+  }
+  .accordion-button:not(.collapsed) {
+    color: var(--main-color-lightBlue);
+    background-color: var(--bg-card);
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color)!important;
+  }
+  .pi-modalDate{
+    margin-left:20px;
+    margin-bottom:-20px;
+  }
+  
+  .pi-buttonInsideCollapse{
+    width:30%;
+    min-width: 50px;
+    text-align: right;
+  }
+  .pi-containerDashboard{
+    max-height: 500px;
+    min-height: 300px;
+    height: 100%;
+    padding-top: 6rem!important;
+    padding-bottom: 6rem!important;
+  }
+  .pi-calendar{
+    margin-top:40px;
+  }
+  .pi-load{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .spinner-grow{
+    width: 3rem;
+    height: 3rem;
+  }
+  .pi-eventDay {
+   background-color: var(--font-color-lightOnCard);
+   border-radius: 0.5em;
+   color: var(--btn-color-secoundaryd);
+  }
+
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .calendar-header button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  

@@ -1,0 +1,125 @@
+<div class="falseBodyBook">
+    <div class="container">
+        <div class="row pi-containerDashboard d-flex">
+            <div>
+                <h1 class="titulos">RESERVA DE SALAS</h1>
+            </div>
+            <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem;">
+                <div class="card pi-card pi-bannerCard" style="height:100%; max-height: 410px;">
+                    <div class="pi-card-header text-center">Fechas de disponibilidad<i class="bi bi-calendar-event ms-2"></i></div>
+                    
+                    <hr class="pi-hrOnCard">
+                    <div class="row d-flex align-items-stretch" style="margin-bottom: 20px;">
+                        <div class="pi-txtCardContainer">
+                            <h3 class="title-booking-div">Fecha de la reserva</h3>
+                        </div>
+                        <div class="pi-txtCardContainer d-flex justify-content-around">
+                            <div class="date-box">
+                                <label for="dia1">Día</label>
+                                <select [(ngModel)]="dia1" id="dia1" name="dia1" class="rounded-2 date-select">
+                                    <option *ngFor="let day of days" [value]="day">{{day}}</option>
+                                </select>
+                            </div>
+                            <div class="date-box">
+                                <label for="mes1">Mes</label>
+                                <select [(ngModel)]="mes1" id="mes1" name="mes1" class="rounded-2 date-select"
+                                    style="width: 110px!important;">
+                                    <option *ngFor="let month of months; let i = index" [value]="numberMonths[i]">
+                                        {{month}}</option>
+                                </select>
+                            </div>
+                            <div class="date-box">
+                                <label for="anyo1">Año</label>
+                                <select [(ngModel)]="anyo1" id="anyo1" name="anyo1" class="rounded-2 date-select">
+                                    <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="pi-txtCardContainer">
+                            <h3 class="title-booking-div">Hora de la reserva</h3>
+                        </div>
+                        <div class="pi-txtCardContainer d-flex justify-content-around">
+                            <div class="date-box">
+                                <label for="hora">Hora</label>
+                                <select [(ngModel)]="hour" id="hora" name="hora" class="rounded-2 date-select">
+                                    <option *ngFor="let hour of hours" [value]="hour">{{hour}}</option>
+                                </select>
+                            </div>
+                            <div class="date-box">
+                                <label for="minutos">Minutos</label>
+                                <select [(ngModel)]="minutos" id="minutos" name="minutos" class="rounded-2 date-select">
+                                    <option *ngFor="let minute of minutes" [value]="minute">{{minute}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hola">
+                        <button (click)="cambiarEstilos()" href="#" class="btn pi-buttonCard ver">Ver salas
+                            disponibles
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem;">
+                <div class="card pi-card pi-bannerCard" style="height:100%; max-height: 410px; width: 100%;">
+                    <div class="pi-card-header text-center pi-force-serif pi-DancingSmall title-booking">Salas &nbsp;<i class="bi bi-houses"></i>
+                    </div>
+                    <hr class="pi-hrOnCard">
+                    <div class="row d-flex align-items-stretch" style="margin-bottom: 20px;">
+                        <div style="margin-top: -20px;">
+                            <ul class="d-flex flex-column justify-content-between materialsList scroll" [ngStyle]="estiloSalas">               
+                                <div *ngFor="let sala of arraySalas;" class="justify-content-between">
+                                    <div (click)="cambiarEstilos2()" (click)="clickSala(sala)" class="d-flex justify-content-between">
+                                        <i class="bi bi-plus-lg"></i>{{ sala.numSala }}<div>{{ sala.stock }}</div>
+                                    </div>
+                                    <hr class="pi-hrOnCard">
+                                </div> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 pt-4" style="border-radius: 1rem;">
+                <div class="card pi-card pi-bannerCard" style="height:100%; max-height: 410px;">
+                    <div class="pi-card-header text-center pi-force-serif pi-DancingSmall title-booking">Reservar&nbsp;<i class="bi bi-bag-check ms-2"></i></div>
+                    <div class="row d-flex align-items-stretch" style="margin-bottom: 20px;">
+                        <div style="margin-top: -20px;">
+                            <ul class="d-flex flex-column materialsList scroll" [ngStyle]="estiloSalas2" style="margin-top: 30px;">
+                                <div *ngFor="let salaReservado of arrayReservados;" class="justify-content-between">
+                                    <div class="d-flex justify-content-between"> 
+                                        <div>{{ salaReservado.numSala }}</div>                                    
+                                        <div>
+                                            {{ salaReservado.stock }} &nbsp;
+                                            <i (click)="restar(salaReservado)" class="bi bi-arrow-left-square"></i>
+                                            <i (click)="borrar(salaReservado)" class="bi bi-trash3 ms-2"></i>
+                                        </div>
+                                    </div>
+                                    <hr class="pi-hrOnCard">
+                                </div> 
+                                <input (click)="mostrarModal()" [ngStyle]="estiloSalas2" value="Confirmar Reserva" class="btn pi-buttonCard fixedBtn" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div [ngStyle]="modalStyle" class="modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Confirmación</h1>
+                        <button type="button" (click)="cerrarModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Estas seguro que deseas realizar la reserva?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="cerrarModal()" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" (click)="onDate()" [routerLink]="'/dashboard'" class="btn btn-success">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
